@@ -2,7 +2,7 @@
 
 Official experiment repo for the "A Sober Look at LLMs for Material Discovery" paper (ICML 2024).
 
-!> [!TIP]
+> [!TIP]
 > If you just want to use the method as a library, check out the sister repo: <https://github.com/wiseodd/lapeft-bayesopt>.
 
 ## Setup
