@@ -1,14 +1,18 @@
-# Bayesian Optimization with LLMs
+# A Sober Look at LLMs for Material Discovery
+
+Official experiment repo for the "A Sober Look at LLMs for Material Discovery" paper (ICML 2024).
+
+!> [!TIP]
+> If you just want to use the method as a library, check out the sister repo: <https://github.com/wiseodd/lapeft-bayesopt>.
 
 ## Setup
 
-Best done in a fresh conda/mamba environment (Python < 3.12). Note that the ordering is important.
+> [!IMPORTANT]
+> Note that the ordering is important.
 
 1. Install PyTorch (with CUDA): <https://pytorch.org/get-started/locally/>
 2. Install Huggingface libraries and others: `pip install transformers datasets peft tqdm`
-3. Install a specific branch of laplace-torch: `pip install git+https://github.com/aleximmer/Laplace.git@mc-subset2`
-4. Install a specific version of ASDL (to compute Hessians): `pip install git+https://github.com/wiseodd/asdl.git@dev`
-
+3. Install laplace-torch: `pip install git+https://github.com/aleximmer/laplace.git@0.2`
 
 ## Fixed-Feature Experiments
 
@@ -26,7 +30,6 @@ python run_fixed_features.py --feature_type {FEATURE_TYPE} --method {METHOD} --r
 
 Similarly for the multiobjective experiments (`cache_features_multiobj.py` and `run_multiobj.py`).
 
-
 ## Finetuning Experiments
 
 Simply run the following.
@@ -37,7 +40,17 @@ python run_finetuning.py --foundation_model {FOUNDATION_MODEL} --randseed {RANDS
 
 See the Python file for the full arguments.
 
-
 ## BO-LIFT In Context Learning Baseline
 
 The script is in `baselines/run_bolift.py`. It has similar options as the fixed-feature script.
+
+## Citation
+
+```bib
+@inproceedings{kristiadi2024sober,
+  title={A Sober Look at {LLMs} for Material Discovery: {A}re They Actually Good for {B}ayesian Optimization Over Molecules?},
+  author={Kristiadi, Agustinus and Strieth-Kalthoff, Felix and Skreta, Marta and Poupart, Pascal and Aspuru-Guzik, Al\'{a}n and Pleiss, Geoff},
+  booktitle={ICML},
+  year={2024}
+}
+```
