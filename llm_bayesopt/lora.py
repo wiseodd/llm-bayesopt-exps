@@ -232,6 +232,7 @@ class LoRALLMBayesOpt(LLMBayesOpt):
                 hessian_structure=cfg.hess_factorization,
                 sigma_noise=1 if cfg.noise_var is None else math.sqrt(cfg.noise_var),
                 last_layer_name=cfg.last_layer_name,
+                dict_key_x="input_ids",
             )
         else:
             self.bnn = Laplace(
@@ -240,6 +241,7 @@ class LoRALLMBayesOpt(LLMBayesOpt):
                 subset_of_weights=cfg.subset_of_weights,
                 hessian_structure=cfg.hess_factorization,
                 sigma_noise=1 if cfg.noise_var is None else math.sqrt(cfg.noise_var),
+                dict_key_x="input_ids",
             )
         # print('Fitting Laplace...')
         self.bnn.fit(train_loader)
