@@ -12,7 +12,7 @@ Official experiment repo for the "A Sober Look at LLMs for Material Discovery" p
 
 1. Install PyTorch (with CUDA): <https://pytorch.org/get-started/locally/>
 2. Install Huggingface libraries and others: `pip install transformers datasets peft tqdm`
-3. Install laplace-torch: `pip install git+https://github.com/aleximmer/laplace.git@0.2`
+3. Install laplace-torch: `pip install laplace-torch`
 
 ## Fixed-Feature Experiments
 
